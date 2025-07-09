@@ -22,11 +22,14 @@ export default function AuthForm() {
     const payload = isLogin ? { email, password } : { name, email, password };
 
     try {
-      const res = await fetch(`http://localhost:3000${endpoint}`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
+      const res = await fetch(
+        `https://task-13-back-end-moazs-projects-15d33ef1.vercel.app${endpoint}`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        }
+      );
 
       const data = await res.json();
 
